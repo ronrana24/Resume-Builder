@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rahul Rana Resume</title>
+
+    <style>
+      body {
+        font-family: Georgia, serif;
+        margin: 18mm auto;
+        max-width: 794px;
+        font-size: 12px;
+        line-height: 1.35;
+        color: #222;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-bottom: 1px solid #d8d8d8;
+        padding-bottom: 8px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      .name {
+        margin-bottom: 2px;
+        font-size: 24px;
+        letter-spacing: 0.3px;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0 6px;
+        font-size: 11px;
+        margin-bottom: 0;
+      }
+
+      .contact-link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .contact-link:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      .contact-sep {
+        color: #8a8a8a;
+      }
+
+      .section {
+        margin-top: 12px;
+      }
+
+      .section-title {
+        font-weight: bold;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+      }
+
+      ul {
+        margin: 2px 0 6px 18px;
+        padding-left: 0;
+      }
+
+      .job {
+        margin-bottom: 8px;
+      }
+
+      .job-title {
+        font-weight: bold;
+      }
+
+      .company {
+        font-style: italic;
+      }
+
+      .date {
+        float: right;
+        color: #555;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .education {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2px 12px;
+        align-items: baseline;
+        margin-bottom: 6px;
+      }
+
+      .education-title {
+        font-weight: bold;
+      }
+
+      .education-years {
+        color: #555;
+      }
+
+      .education-school {
+        color: #333;
+      }
+
+      .education-gpa {
+        font-weight: 600;
+      }
+
+      .section,
+      .job,
+      li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          max-width: none;
+          font-size: 11.5px;
+          line-height: 1.3;
+        }
+
+        .section {
+          margin-top: 10px;
+        }
+
+        ul {
+          margin: 2px 0 5px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1 class="name">{{ person_name }}</h1>
+      <div class="contact">
+        <a class="contact-link" href="mailto:{{ person_email }}"
+          >Email</a
+        >
+        <span class="contact-sep">|</span>
+        <a class="contact-link" href="tel:{{ person_phone }}">Phone</a>
+        {% for link in personal_links %}
+        <span class="contact-sep">|</span>
+        <a
+          class="contact-link"
+          href="{{ link.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ link.name }}</a
+        >
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Skills</div>
+
+      <ul>
+        {% for skill in skills %}
+        <li>
+          <b>{{ skill.name }}:</b>
+          {% for tech in skill.technology %}{{ tech.value if tech.value is defined else tech }}{% if not loop.last %}, {% endif %}{% endfor %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Professional Experience</div>
+      {% for experience in experiences %}
+
+      <div class="job">
+        <div class="job-title">{{ experience.position }}</div>
+        <div class="company">{{ experience.company }} – {{ experience.location }}</div>
+        <div class="date">{{ experience.start_date.year }} – {{ experience.end_date.year }}</div>
+        <div class="clear"></div>
+
+        <ul>
+          {% for description in experience.description %}
+          <li>
+            {{ description }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+
+      {% for education_data in education %}
+      <div class="education">
+        <div class="education-title">
+          {{ education_data.degree }} in {{ education_data.field_of_study }}
+        </div>
+        <div class="education-years">
+          {{ education_data.start_year }} – {{ education_data.end_year }}
+        </div>
+        <div class="education-school">{{ education_data.school }}</div>
+        <div class="education-gpa">CGPA: {{ education_data.gpa }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

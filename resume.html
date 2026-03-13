@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rahul Rana Resume</title>
+
+    <style>
+      body {
+        font-family: Georgia, serif;
+        margin: 18mm auto;
+        max-width: 794px;
+        font-size: 12px;
+        line-height: 1.35;
+        color: #222;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-bottom: 1px solid #d8d8d8;
+        padding-bottom: 8px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      .name {
+        margin-bottom: 2px;
+        font-size: 24px;
+        letter-spacing: 0.3px;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0 6px;
+        font-size: 11px;
+        margin-bottom: 0;
+      }
+
+      .contact-link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .contact-link:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      .contact-sep {
+        color: #8a8a8a;
+      }
+
+      .section {
+        margin-top: 12px;
+      }
+
+      .section-title {
+        font-weight: bold;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+      }
+
+      ul {
+        margin: 2px 0 6px 18px;
+        padding-left: 0;
+      }
+
+      .job {
+        margin-bottom: 8px;
+      }
+
+      .job-title {
+        font-weight: bold;
+      }
+
+      .company {
+        font-style: italic;
+      }
+
+      .date {
+        float: right;
+        color: #555;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .education {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2px 12px;
+        align-items: baseline;
+        margin-bottom: 6px;
+      }
+
+      .education-title {
+        font-weight: bold;
+      }
+
+      .education-years {
+        color: #555;
+      }
+
+      .education-school {
+        color: #333;
+      }
+
+      .education-gpa {
+        font-weight: 600;
+      }
+
+      .section,
+      .job,
+      li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          max-width: none;
+          font-size: 11.5px;
+          line-height: 1.3;
+        }
+
+        .section {
+          margin-top: 10px;
+        }
+
+        ul {
+          margin: 2px 0 5px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1 class="name">Rahul Rana</h1>
+      <div class="contact">
+        <a class="contact-link" href="mailto:rahul.rana2000.rr@gmail.com"
+          >Email</a
+        >
+        <span class="contact-sep">|</span>
+        <a class="contact-link" href="tel:+91-7986950839">Phone</a>
+        
+        <span class="contact-sep">|</span>
+        <a
+          class="contact-link"
+          href="https://www.linkedin.com/in/rahulrana24/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        
+        <span class="contact-sep">|</span>
+        <a
+          class="contact-link"
+          href="https://github.com/ronrana24/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        
+        <span class="contact-sep">|</span>
+        <a
+          class="contact-link"
+          href="https://my-portfolio-omega-beryl-59.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Portfolio</a
+        >
+        
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Skills</div>
+
+      <ul>
+        
+        <li>
+          <b>Programming:</b>
+          Python, Java, JavaScript, TypeScript, Golang
+        </li>
+        
+        <li>
+          <b>Frameworks & Libraries:</b>
+          React.js, Django, Node.js, Express.js
+        </li>
+        
+        <li>
+          <b>Databases:</b>
+          PostgreSQL, MySQL, MongoDB, Click-House, Redis
+        </li>
+        
+        <li>
+          <b>Cloud Technologies:</b>
+          AWS, Docker, GitHub Actions, CI/CD
+        </li>
+        
+        <li>
+          <b>Messaging:</b>
+          Kafka, RabbitMQ
+        </li>
+        
+        <li>
+          <b>Testing & Tools:</b>
+          Jest, Postman, Swagger, Git, JIRA, VS Code, Cursor
+        </li>
+        
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Professional Experience</div>
+      
+
+      <div class="job">
+        <div class="job-title">Software Engineer</div>
+        <div class="company">Spyne – Gurgaon, India</div>
+        <div class="date">2024 – 2024</div>
+        <div class="clear"></div>
+
+        <ul>
+          
+          <li>
+            Spearheaded an automated alerting system in CUBE APM that tracked logic threshold violations and reduced developer response time by 30%, minimising system downtime.
+          </li>
+          
+          <li>
+            Engineered a fault-tolerant webhook system incorporating design patterns and message queuing to handle real-time event processing across multiple client integrations, reducing event failure rate by 35%.
+          </li>
+          
+          <li>
+            Pioneered a real-time streaming pipeline using Apache Kafka and MongoDB, enabling event-driven data distribution to downstream microservices and reducing data latency by 40%.
+          </li>
+          
+          <li>
+            Among a select group of developers chosen to architect a custom FTP system from scratch, enabling automated file transmission to remote servers and improving transfer efficiency by 40%.
+          </li>
+          
+          <li>
+            Supercharged MongoDB query performance through indexing and aggregation tuning, and introduced Redis caching to eliminate redundant database calls, improving overall application performance by 45%.
+          </li>
+          
+          <li>
+            Delivered a real-time ClickHouse dashboard to monitor application performance and client data ingestion, improving system observability and reducing manual reporting effort by 40%.
+          </li>
+          
+          <li>
+            Coordinated a team of 2+ developers, delegating tasks and providing technical mentorship that improved sprint velocity by 30%, conducting code reviews and knowledge-sharing sessions to ensure on-time delivery.
+          </li>
+          
+          <li>
+            Architected and integrated multiple client APIs and crafted scalable, robust RESTful APIs following best practices for performance, fault tolerance, and extensibility across microservices.
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      <div class="job">
+        <div class="job-title">Software Engineer</div>
+        <div class="company">Chimps – Hyderabad, India</div>
+        <div class="date">2024 – 2024</div>
+        <div class="clear"></div>
+
+        <ul>
+          
+          <li>
+            Constructed a scalable, role-based document management microservice leveraging MVC architecture and open-source tooling (Paperless), enabling secure access for 100+ employees and improving operational efficiency and data security.
+          </li>
+          
+          <li>
+            Architected an AWS Lambda-powered serverless communication pipeline with SQS, integrating LeadSquared APIs with event-based asynchronous architectures to enhance customer engagement by 40%; streamlined deployment pipelines using Docker and GitHub Actions CI/CD.
+          </li>
+          
+          <li>
+            Revamped relational database schemas and fine-tuned PostgreSQL queries, slashing query execution time by 40%; introduced Redis caching to accelerate data retrieval for data-intensive applications.
+          </li>
+          
+          <li>
+            Built a multi-threaded data extraction pipeline for FMCSA, boosting processing efficiency by 33% and channelling results into a database for scalable analysis.
+          </li>
+          
+          <li>
+            Crafted and hardened robust RESTful APIs for seamless third-party service integration, ensuring high performance and scalability in a service-oriented architecture.
+          </li>
+          
+          <li>
+            Established a centralised logging system integrating Sentry for effective monitoring and observability, enabling streamlined issue tracking and faster resolution.
+          </li>
+          
+          <li>
+            Automated ETL processes via strategically deployed cron jobs, cutting manual effort by 20% and lifting data processing efficiency by 17%.
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+
+      
+      <div class="education">
+        <div class="education-title">
+          Bachelor in Computer Science & Engineering
+        </div>
+        <div class="education-years">
+          2020 – 2024
+        </div>
+        <div class="education-school">Chitkara University</div>
+        <div class="education-gpa">CGPA: 8.85</div>
+      </div>
+      
+    </div>
+  </body>
+</html>
